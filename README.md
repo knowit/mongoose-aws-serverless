@@ -21,4 +21,5 @@ Fokuset ligger mest på konfigurasjon av serverless-teknologi. Det blir lite fik
 ## Innhold
 
 * [Sette opp awscli](./tools)
+* [Installer driver for ESP32](./usb-uart)
 * [Sette opp dingsen med Mongoose](./mongoose-os)
