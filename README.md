@@ -20,5 +20,5 @@ Fokuset ligger mest på konfigurasjon av serverless-teknologi. Det blir lite fik
 
 ## Innhold
 
-* Sette opp utviklingsverktøy
-* 
+* [Sette opp awscli](./tools)
+* [Sette opp dingsen med Mongoose](./mongoose-os)
