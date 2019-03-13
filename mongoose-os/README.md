@@ -2,7 +2,7 @@
 
 Vi bruker programmet `mos` fra terminalen for å flashe firmware til dingsen og for å sette opp koblingen mellom dingsen og AWS.
 
-[Følg instruksene her for å installere mos](https://mongoose-os.com/docs/mongoose-os/quickstart/setup.md).
+[Følg instruksene her for å installere mos (kun steg 1)](https://mongoose-os.com/docs/mongoose-os/quickstart/setup.md).
 
 Appen vi skal utvikle får vi så og si gratis. Den legger du inn ved å skrive
 
@@ -24,6 +24,8 @@ Vi kompilerer appen
 ```
 $ mos build --platform=esp32
 ```
+
+(dette tar litt tid)
 
 og flasher dingsen
 
