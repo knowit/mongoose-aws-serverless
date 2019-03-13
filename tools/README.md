@@ -6,6 +6,12 @@ Vi trenger awscli for å konfigurere skytjenestene vi bruker.
 
 [Følg instruksjonene her for å installere awscli](https://aws.amazon.com/cli/).
 
+NB! For macOS: awscli kan også installeres med homebrew
+
+```
+brew install awscli
+```
+
 Før vi konfigurerer awscli lager vi en AWS IAM bruker.
 
 Gå til [konsollen på AWS](https://console.aws.amazon.com) og søk opp IAM:
