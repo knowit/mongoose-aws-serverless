@@ -45,3 +45,4 @@ Vi velger skyleverandør litt etter magefølelsen, og lander da på Amazon.
 * [Sette opp awscli](./tools)
 * [Installer driver for ESP32](./usb-uart)
 * [Sette opp dingsen med Mongoose OS](./mongoose-os)
+* [Reagere på meldinger](./mongoose-messaging)
