@@ -40,6 +40,8 @@ Plattformene er sikkert mye forskjellige, men kan gjerne oppsummeres slik:
 
 Vi setter opp Mongoose OS på en dings. Dingsen vi bruker heter ESP32. En ESP32 er en mikrokontroller med innebygget støtte for Wifi, har lav kostnad, og er mye utbredt. Mongoose OS er et utviklingsrammeverk som støtter mange forskjellige dingser, og som abstraherer vekk mye av den underliggende SDKen til dingsen. Mongoose tar seg også av konfigurering av MQTT mot skyleverandøren slikt som generering av sertifikater og selve oppkoblingen.
 
+![](./awsiot.png)
+
 Vi velger skyleverandør litt etter magefølelsen, og lander da på Amazon.
 
 * [Sette opp awscli](./tools)
