@@ -93,3 +93,7 @@ __TIPS!__ For å bygge ny versjon:
 1. Skriv: ```mos flash```
 1. Skriv: ```mos wifi``` ssid pass
 1. Skriv: ```mos aws-iot-setup```
+
+...og alt kan gjøres på en linje slik:
+
+``` mos build --platform=esp32 ; mos flash ; mos wifi knowit-guest Blockchain ; mos aws-iot-setup ; mos```
