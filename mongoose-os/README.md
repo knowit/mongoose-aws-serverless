@@ -75,7 +75,7 @@ Vi kan se på meldingene i AWS-konsollen ved å søke opp AWS "IoT Core" og gå 
 
 ![](./aws-iot-sub.png)
 
-__OBS!__ Hvis du blir får et velkomstbilde, klikk "Getting started" og deretter "Monitor" (i menyen til vesntre) 
+__OBS!__ Hvis du blir får et velkomstbilde, klikk "Getting started" og deretter "Monitor" (i menyen til venstre) 
 
 1. Gå til menyen Manage/Things i menyen til venstre 
 1. Noter ned navn på dingsen, f.eks "esp32_929D8C"
@@ -87,7 +87,7 @@ __OBS!__ Hvis du blir får et velkomstbilde, klikk "Getting started" og deretter
 
 
 
-For å bygge ny versjon:
+__TIPS!__ For å bygge ny versjon:
 1. Hvis ikke grafisk modus er åpen, skriv ```mos``` i kommandolinjen
 1. Skriv: ```mos build --platform=esp32```
 1. Skriv: ```mos flash```
