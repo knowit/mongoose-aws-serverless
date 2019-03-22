@@ -30,7 +30,7 @@ Plattformene er sikkert mye forskjellige, men kan gjerne oppsummeres slik:
 
 * MQTT krever en meldings-broker som tar i mot og sender meldingene videre. Brokeren har forskjellige "topics" som dingsene kan sende eller lytte etter meldinger på. Hos Amazon ligger brokeren i "IoT Core", hos Azure i "IoT Hub", osv.
 
-* Dingsen har en virtuell kopi av seg selv i skyen. Hos Amazon heter kopien "Shadow", hos Azure "Device twin", osv. Fyll ut mer her senere.
+* Dingsen har en virtuell kopi av seg selv i skyen. Hos Amazon heter kopien "Shadow", hos Azure "Device twin", osv. Den virtuelle kopien er ofte et JSON-skjema som speiler tilstanden til dingsen. Dingsen og den virtuelle kopien kan synkroniseres.
 
 * Regler, konfigurert hos skyleverandøren, kan trigge andre utfall av meldingene. Dette kan være å lagre meldinger i en database, gjøre analyse av dataene, kjøre lambda-funksjoner, eller andre ting som er tilgjengelig i en serverless-verden.
 

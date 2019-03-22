@@ -16,8 +16,20 @@ Meldingen som sendes er state-objektet som er definert i koden. I tillegg til å
 
 ## Oppgave 2
 
-Legg til funksjonalitet for å lytte på MQTT-meldinger, på samme topic som vi satte over.
+Legg til funksjonalitet for å [lytte på MQTT-meldinger](https://mongoose-os.com/docs/mongoose-os/api/net/mqtt.md#js-api), på samme topic som vi satte over.
 Skriv ut meldingen slik at den dukker opp i loggene i mos.
+
+<details><summary>Får du det ikke til? Klikk her for å se fasit</summary>
+<p>
+
+```js
+MQTT.sub('state', function(conn, topic, msg) {
+  print('Topic:', topic, 'message:', msg);
+}, null);
+```
+
+</p>
+</details>
 
 ## Oppgave 3
 
@@ -37,6 +49,26 @@ Vi vil skru lysdioden av og på i samsvar med `on`-variabelen vi mottar i state-
 
 [I dokumentasjonen for GPIO](https://mongoose-os.com/docs/mongoose-os/api/core/mgos_gpio.h.md#js-api) kan vi finne metoden `GPIO.write`. Bruk denne for å reflektere state på lysdioden.
 
+<details><summary>Får du det ikke til? Klikk her for å se fasit</summary>
+<p>
+
+```js
+MQTT.sub('state', function(conn, topic, msg) {
+  print('Topic:', topic, 'message:', msg);
+  let mqttState = JSON.parse(msg);
+  GPIO.write(2, mqttState.on);
+}, null);
+```
+
+</p>
+</details>
+
 ## Oppgave 5
+
+Send en melding fra AWS til topic `state` for å skru lysdioden av og på.
+
+![](./aws-msg.png)
+
+## Oppgave 6
 
 Trykk på knappen på dingsen som ikke har en lysdiode koblet til seg og nyt hvor komplisert man kan gjøre det å skru en lampe av og på.
