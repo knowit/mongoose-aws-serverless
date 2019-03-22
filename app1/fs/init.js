@@ -102,6 +102,10 @@ if (btn >= 0) {
   }, null);
 }
 
+MQTT.sub('my/topic', function(conn, message) {
+   print('Got message:', message);
+});
+
 Event.on(Event.CLOUD_CONNECTED, function() {
   online = true;
   Shadow.update(0, {ram_total: Sys.total_ram()});

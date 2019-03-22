@@ -71,7 +71,25 @@ $ mos
 
 Om man trykker på knappen til høyre for USB-kontakten (Boot) sendes det en melding fra dingsen til skyen. Meldingen og kanalen den blir sendt på vises i loggene i mos.
 
-Vi kan se på meldingene i AWS-konsollen ved å søke opp AWS IoT og gå til `Test`.
+Vi kan se på meldingene i AWS-konsollen ved å søke opp AWS "IoT Core" og gå til `Test`.
 
 ![](./aws-iot-sub.png)
 
+__OBS!__ Hvis du blir får et velkomstbilde, klikk "Getting started" og deretter "Monitor" (i menyen til vesntre) 
+
+1. Gå til menyen Manage/Things i menyen til venstre 
+1. Noter ned navn på dingsen, f.eks "esp32_929D8C"
+1. Klikk på Test i venstremenyen
+1. Velg "Subscribe to a topic"
+1. Legg inn topic på dingsen din på formatet devices/NAVN/events, f.eks: devices/esp32_929D8C/events
+1. Trykk på knappen
+1. Det skal vises en melding hver gang knappen trykkes
+
+
+
+For å bygge ny versjon:
+1. Hvis ikke grafisk modus er åpen, skriv ```mos``` i kommandolinjen
+1. Skriv: ```mos build --platform=esp32```
+1. Skriv: ```mos flash```
+1. Skriv: ```mos wifi``` ssid pass
+1. Skriv: ```mos aws-iot-setup```
