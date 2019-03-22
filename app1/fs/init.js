@@ -12,7 +12,7 @@ load('api_sys.js');
 load('api_watson.js');
 
 let btn = Cfg.get('board.btn1.pin');              // Built-in button GPIO
-let led = Cfg.get('board.led1.pin');              // Built-in LED GPIO number
+let led = 2;              // Built-in LED GPIO number
 let onhi = Cfg.get('board.led1.active_high');     // LED on when high?
 let state = {on: false, btnCount: 0, uptime: 0};  // Device state
 let online = false;                               // Connected to the cloud?
@@ -24,7 +24,7 @@ let setLED = function(on) {
 };
 
 GPIO.set_mode(led, GPIO.MODE_OUTPUT);
-setLED(state.on);
+setLED(true);
 
 let reportState = function() {
   Shadow.update(0, state);
@@ -69,6 +69,7 @@ if (btn >= 0) {
   }
   GPIO.set_button_handler(btn, btnPull, btnEdge, 20, function() {
     state.btnCount++;
+    state.on = !state.on;
     let message = JSON.stringify(state);
     let sendMQTT = true;
     if (Azure.isConnected()) {
@@ -93,7 +94,7 @@ if (btn >= 0) {
     }
     // AWS is handled as plain MQTT since it allows arbitrary topics.
     if (AWS.isConnected() || (MQTT.isConnected() && sendMQTT)) {
-      let topic = 'devices/' + Cfg.get('device.id') + '/events';
+      let topic = 'state';
       print('== Publishing to ' + topic + ':', message);
       MQTT.pub(topic, message, 0 /* QoS */);
     } else if (sendMQTT) {
@@ -102,9 +103,11 @@ if (btn >= 0) {
   }, null);
 }
 
-MQTT.sub('my/topic', function(conn, message) {
-   print('Got message:', message);
-});
+MQTT.sub('state', function(conn, topic, msg) {
+  print('Topic:', topic, 'message:', msg);
+  let mqttState = JSON.parse(msg);
+  GPIO.write(2, mqttState.on);
+}, null);
 
 Event.on(Event.CLOUD_CONNECTED, function() {
   online = true;
