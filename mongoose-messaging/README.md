@@ -48,6 +48,12 @@ Koble en lysdiode til pinne 2 på dingsen. Lysdioden trenger en motstand i serie
 
 ![](./conn.jpg)
 
+Eksempelprogrammet forventer at lysdioden er innebygget i dingsen. Siden dingsen vår ikke har det, må vi endre linje 15 til
+
+```
+let led = 2;              // Built-in LED GPIO number
+```
+
 ## Oppgave 4
 
 Vi vil skru lysdioden av og på i samsvar med `on`-variabelen vi mottar i state-objektet. Pinne 2 som vi har koblet lysdioden til er en General Purpose Input/Output pinne (GPIO). 
