@@ -33,17 +33,37 @@ og flasher dingsen
 $ mos flash
 ```
 
+Om du ikke får koblet til dingsen:
+
+Sjekk om USB-til-serieport-adapteren finnes:
+
+```
+$ ls /dev/cu.*
+```
+
+Den heter typisk noe som `SLAB_USBtoUART`.
+
+Skriv deretter
+
+```
+$ mos flash --port=/dev/cu.SLAB_USBtoUART
+```
+
 Dingsen må ha parametere for Wifi. Disse setter vi ved å skrive 
 
 ```
 $ mos wifi knowit-workshop QuantumDot # wifinavn er knowit-workshop og passordet er QuantumDot
 ```
 
+Denne kommandoen må skrives etter hver gang vi flasher dingsen.
+
 Vi må deretter konfigurere dingsen for AWS
 
 ```
 $ mos aws-iot-setup
 ```
+
+Denne kommandoen må skrives etter hver gang vi flasher dingsen.
 
 Dingsen vår blir opprettet i AWS og sertifikater synkroniseres
 
