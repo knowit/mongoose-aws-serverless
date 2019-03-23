@@ -15,8 +15,8 @@ Endre topic for MQTT.pub til `state`.
 Meldingen som sendes er state-objektet som er definert i koden. I tillegg til å øke `btnCount` ønsker vi å endre variabelen `on` i state-objektet.
 
 Når knappen trykkes, skal ```on``` settes til vekselsvis ```true```eller ```false```. Mao:
- - hvis man state er ```true``` og knappen trykkes, settes ```on``` til ```false```.
- - hvis man state er ```false``` og knappen trykkes, settes ```on``` til ```true```. 
+ - hvis state er ```true``` og knappen trykkes, settes ```on``` til ```false```.
+ - hvis state er ```false``` og knappen trykkes, settes ```on``` til ```true```. 
 
 ## Oppgave 2
 
