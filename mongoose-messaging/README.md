@@ -10,7 +10,7 @@ som er funksjonen som sender meldinger på MQTT-bussen.
 
 ## Oppgave 1
 
-Endre topic for MQTT.pub til `/state`.
+Endre topic for MQTT.pub til `state`.
 
 Meldingen som sendes er state-objektet som er definert i koden. I tillegg til å øke `btnCount` ønsker vi å endre variabelen `on` i state-objektet.
 
